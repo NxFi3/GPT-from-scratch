@@ -1,0 +1,202 @@
+{
+  "experiment": {
+    "name": "baseModel+SWIGLU&RMS_BOOKCORPUS",
+    "date": "2026-05-15 21:47:48",
+    "model": {
+      "max_len": 128,
+      "d_model": 128,
+      "num_heads": 4,
+      "num_layers": 4,
+      "d_ff": 512,
+      "dropout": 0.1,
+      "parameters": 20481792
+    },
+    "dataset": {
+      "type": "bookcorpus",
+      "size": 409,
+      "with_eos": true,
+      "max_len": 128
+    },
+    "training": {
+      "epochs": 10,
+      "lr": 0.001,
+      "batch_size": 32,
+      "gradient_clip": 1.0,
+      "optimizer": "Adam"
+    },
+    "generation": {
+      "temperature": 0.7,
+      "repetition_penalty": 1.2,
+      "max_tokens": 15
+    }
+  },
+  "training": {
+    "total_time_seconds": 105.49534034729004,
+    "num_epochs": 30,
+    "final_avg_loss": 1.5582573413848877,
+    "loss_history": [
+      {
+        "epoch": 0,
+        "avg_loss": 10.991733697744516,
+        "epoch_time": 3.6409497261047363
+      },
+      {
+        "epoch": 1,
+        "avg_loss": 8.624486629779522,
+        "epoch_time": 3.527844190597534
+      },
+      {
+        "epoch": 2,
+        "avg_loss": 6.9056058663588304,
+        "epoch_time": 3.508310079574585
+      },
+      {
+        "epoch": 3,
+        "avg_loss": 5.997642553769625,
+        "epoch_time": 3.5278749465942383
+      },
+      {
+        "epoch": 4,
+        "avg_loss": 5.4378036719102125,
+        "epoch_time": 3.4964303970336914
+      },
+      {
+        "epoch": 5,
+        "avg_loss": 4.957246670356164,
+        "epoch_time": 3.5243067741394043
+      },
+      {
+        "epoch": 6,
+        "avg_loss": 4.549865172459529,
+        "epoch_time": 3.485736131668091
+      },
+      {
+        "epoch": 7,
+        "avg_loss": 4.198343552075899,
+        "epoch_time": 3.516706705093384
+      },
+      {
+        "epoch": 8,
+        "avg_loss": 3.9145522667811465,
+        "epoch_time": 3.5037965774536133
+      },
+      {
+        "epoch": 9,
+        "avg_loss": 3.6810732254615197,
+        "epoch_time": 3.5031063556671143
+      },
+      {
+        "epoch": 10,
+        "avg_loss": 3.4963542498075046,
+        "epoch_time": 3.501751661300659
+      },
+      {
+        "epoch": 11,
+        "avg_loss": 3.3128798374762902,
+        "epoch_time": 3.543877363204956
+      },
+      {
+        "epoch": 12,
+        "avg_loss": 3.1599445709815392,
+        "epoch_time": 3.518526077270508
+      },
+      {
+        "epoch": 13,
+        "avg_loss": 3.0121066020085263,
+        "epoch_time": 3.5080575942993164
+      },
+      {
+        "epoch": 14,
+        "avg_loss": 2.886980551939744,
+        "epoch_time": 3.499366283416748
+      },
+      {
+        "epoch": 15,
+        "avg_loss": 2.7525016894707313,
+        "epoch_time": 3.508416175842285
+      },
+      {
+        "epoch": 16,
+        "avg_loss": 2.6566359996795654,
+        "epoch_time": 3.5407605171203613
+      },
+      {
+        "epoch": 17,
+        "avg_loss": 2.5447382560143104,
+        "epoch_time": 3.502521276473999
+      },
+      {
+        "epoch": 18,
+        "avg_loss": 2.4492991337409387,
+        "epoch_time": 3.5326430797576904
+      },
+      {
+        "epoch": 19,
+        "avg_loss": 2.349016024516179,
+        "epoch_time": 3.509965181350708
+      },
+      {
+        "epoch": 20,
+        "avg_loss": 2.255503306022057,
+        "epoch_time": 3.5227468013763428
+      },
+      {
+        "epoch": 21,
+        "avg_loss": 2.1648872173749485,
+        "epoch_time": 3.503532886505127
+      },
+      {
+        "epoch": 22,
+        "avg_loss": 2.098216552000779,
+        "epoch_time": 3.505098819732666
+      },
+      {
+        "epoch": 23,
+        "avg_loss": 2.0108113839076114,
+        "epoch_time": 3.491168260574341
+      },
+      {
+        "epoch": 24,
+        "avg_loss": 1.9290947088828454,
+        "epoch_time": 3.515568256378174
+      },
+      {
+        "epoch": 25,
+        "avg_loss": 1.8490667526538556,
+        "epoch_time": 3.514434576034546
+      },
+      {
+        "epoch": 26,
+        "avg_loss": 1.7673666110405555,
+        "epoch_time": 3.50624680519104
+      },
+      {
+        "epoch": 27,
+        "avg_loss": 1.6971174386831431,
+        "epoch_time": 3.5161147117614746
+      },
+      {
+        "epoch": 28,
+        "avg_loss": 1.6211624237207265,
+        "epoch_time": 3.499335527420044
+      },
+      {
+        "epoch": 29,
+        "avg_loss": 1.5582573413848877,
+        "epoch_time": 3.5175204277038574
+      }
+    ]
+  },
+  "generation": {
+    "the cat": "the cat of the sky,\nofgil\n\nby Robert Louis Stevenson\n\n\n\nThis is derived",
+    "the dog": "the dog\nBuel\n\nby L. J. Frank Norris, 19",
+    "she likes": "she likes.  By ----------------------------------------------------------------WORD\n\n\nBY\n\nA Century Or)\n\nby Henry James",
+    "i love": "i loveProfessor beagleslesus  how free to speak\n  Italic"
+  },
+  "temperature_effect": {
+    "0.6": "the cat of the first posted on the World,\nand\n\nby James\n\n\n\n\nCONTENTS",
+    "0.8": "the cat of the British\n\nby Faith,\n\n;\nginto\n     WHITE_All fl",
+    "1.0": "the cat Three War\n\n_RB Studies of the United States, returned Liesaud ribbon of",
+    "1.2": "the caticorn 1 Mrs\"\n\n\n\n beautyarrow Ferber.\n\n and other gere United States"
+  }
+}

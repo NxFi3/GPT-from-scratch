@@ -1,0 +1,129 @@
+import torch 
+import torch.nn as nn 
+import torch.nn.functional as F
+
+class PositionalEmbedding(nn.Module):
+    def __init__(self, vocab_size=50256, emb_dim=128, maxlen=2048, dropout=0.01):
+        super().__init__()
+        self.tok = nn.Embedding(vocab_size, emb_dim)
+        self.pos = nn.Parameter(torch.randn(1, maxlen, emb_dim) * 0.01)  # ← std=0.01
+        self.drop = nn.Dropout(dropout)
+    def forward(self, x):
+        B, T = x.shape
+        tok = self.tok(x)
+        pos = self.pos[:, :T]
+        return self.drop(tok + pos)
+    
+
+class MultiHeadAttention(nn.Module):
+    def __init__(self, D_model, num_heads, dropout=0.1):
+        super().__init__()
+        assert D_model % num_heads == 0
+        self.D_head = D_model // num_heads
+        self.num_heads = num_heads
+        
+        self.q_proj = nn.Linear(D_model, D_model)
+        self.k_proj = nn.Linear(D_model, D_model)
+        self.v_proj = nn.Linear(D_model, D_model)
+        self.out_proj = nn.Linear(D_model, D_model)
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x, causal_mask=True, padding_mask=None):
+        B, S, _ = x.shape
+        
+        Q = self.q_proj(x).view(B, S, self.num_heads, self.D_head).transpose(1, 2)
+        K = self.k_proj(x).view(B, S, self.num_heads, self.D_head).transpose(1, 2)
+        V = self.v_proj(x).view(B, S, self.num_heads, self.D_head).transpose(1, 2)
+        
+        scores = torch.matmul(Q, K.transpose(-2, -1)) / (self.D_head ** 0.5)
+        
+        if causal_mask:
+            mask = torch.triu(torch.ones(S, S, device=x.device), diagonal=1).bool()
+            scores = scores.masked_fill(mask, -1e9)
+        
+        if padding_mask is not None:
+            # padding_mask: [B, S] -> [B, 1, 1, S]
+            padding_mask = padding_mask.unsqueeze(1).unsqueeze(2)
+            scores = scores.masked_fill(~padding_mask, -1e9)
+        
+        attn = torch.softmax(scores, dim=-1)
+        attn = self.dropout(attn)
+        
+        out = attn @ V
+        out = out.transpose(1, 2).contiguous().view(B, S, -1)
+        return self.out_proj(out)
+
+class TransformerBlock(nn.Module):
+    def __init__(self, D_model, num_heads, D_FF, dropout=0.1):
+        super().__init__()
+        self.attention = MultiHeadAttention(D_model, num_heads, dropout)
+        self.FFN = nn.Sequential(
+            nn.Linear(D_model, D_FF),
+            nn.Dropout(dropout),
+            nn.GELU(),
+            nn.Linear(D_FF, D_model)
+        )
+        self.norm1 = nn.LayerNorm(D_model)
+        self.norm2 = nn.LayerNorm(D_model)
+        self.dropout = nn.Dropout(dropout)
+        
+
+    def forward(self, x, mask=None, padding=None):
+        # Pre-Norm + Attention + Residual with scale
+        atten = self.attention(self.norm1(x), mask, padding)
+        x = x +  self.dropout(atten)
+        
+        # Pre-Norm + FFN + Residual with scale
+        ff = self.FFN(self.norm2(x))
+        x = x + self.dropout(ff)
+        return x
+class GPTModel(nn.Module):
+    def __init__(self, vocab_size, max_len, d_model, num_heads, d_ff, num_layers, dropout=0.1):
+        super().__init__()
+        self.d_model = d_model
+        
+        self.embedding = PositionalEmbedding(vocab_size, d_model, max_len, dropout)
+        self.blocks = nn.ModuleList([
+            TransformerBlock(d_model, num_heads, d_ff, dropout) 
+            for _ in range(num_layers)
+        ])
+        self.lm_head = nn.Linear(d_model, vocab_size,bias=False)
+        self.lm_head.weight = self.embedding.tok.weight
+        self.norm = nn.LayerNorm(d_model)
+        
+        self.apply(self._init_weights)
+        
+    def _init_weights(self, module):
+        if isinstance(module, (nn.Linear, nn.Embedding)):
+            module.weight.data.normal_(mean=0.00, std=0.03)
+            if isinstance(module, nn.Linear) and module.bias is not None:
+                module.bias.data.zero_()
+        elif isinstance(module, nn.LayerNorm):
+            module.bias.data.zero_()
+            module.weight.data.fill_(1.0)
+
+    def forward(self, x, mask=None, padding=None):
+        x = self.embedding(x) 
+        
+        for block in self.blocks:                    
+            x = block(x, mask, padding)
+        x = self.norm(x)                       
+        return self.lm_head(x)
+    
+"""
+Model Config:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""

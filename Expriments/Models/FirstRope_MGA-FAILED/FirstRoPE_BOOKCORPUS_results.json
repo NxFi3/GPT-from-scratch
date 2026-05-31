@@ -1,0 +1,201 @@
+{
+  "experiment": {
+    "name": "FirstRoPE_BOOKCORPUS",
+    "date": "2026-05-15 22:42:40",
+    "model": {
+      "d_model": 128,
+      "num_heads": 4,
+      "num_layers": 4,
+      "d_ff": 512,
+      "dropout": 0.1,
+      "parameters": 20366336
+    },
+    "dataset": {
+      "type": "bookcorpus",
+      "size": 409,
+      "with_eos": true,
+      "max_len": 128
+    },
+    "training": {
+      "epochs": 10,
+      "lr": 0.001,
+      "batch_size": 32,
+      "gradient_clip": 1.0,
+      "optimizer": "Adam"
+    },
+    "generation": {
+      "temperature": 0.7,
+      "repetition_penalty": 1.2,
+      "max_tokens": 15
+    }
+  },
+  "training": {
+    "total_time_seconds": 107.37397813796997,
+    "num_epochs": 30,
+    "final_avg_loss": 1.2362716518915617,
+    "loss_history": [
+      {
+        "epoch": 0,
+        "avg_loss": 11.022863681499775,
+        "epoch_time": 3.7412993907928467
+      },
+      {
+        "epoch": 1,
+        "avg_loss": 8.706212997436523,
+        "epoch_time": 3.6112067699432373
+      },
+      {
+        "epoch": 2,
+        "avg_loss": 6.9253519131587105,
+        "epoch_time": 3.553309202194214
+      },
+      {
+        "epoch": 3,
+        "avg_loss": 5.974903253408579,
+        "epoch_time": 3.5808963775634766
+      },
+      {
+        "epoch": 4,
+        "avg_loss": 5.375795401059664,
+        "epoch_time": 3.579602003097534
+      },
+      {
+        "epoch": 5,
+        "avg_loss": 4.915088103367732,
+        "epoch_time": 3.602306604385376
+      },
+      {
+        "epoch": 6,
+        "avg_loss": 4.505749262296236,
+        "epoch_time": 3.543372631072998
+      },
+      {
+        "epoch": 7,
+        "avg_loss": 4.162426049892719,
+        "epoch_time": 3.570739984512329
+      },
+      {
+        "epoch": 8,
+        "avg_loss": 3.8579496420346775,
+        "epoch_time": 3.5893235206604004
+      },
+      {
+        "epoch": 9,
+        "avg_loss": 3.607121761028583,
+        "epoch_time": 3.5472230911254883
+      },
+      {
+        "epoch": 10,
+        "avg_loss": 3.3885700152470517,
+        "epoch_time": 3.593914747238159
+      },
+      {
+        "epoch": 11,
+        "avg_loss": 3.211798777947059,
+        "epoch_time": 3.537410020828247
+      },
+      {
+        "epoch": 12,
+        "avg_loss": 3.032607940527109,
+        "epoch_time": 3.5366275310516357
+      },
+      {
+        "epoch": 13,
+        "avg_loss": 2.8704907710735617,
+        "epoch_time": 3.5443618297576904
+      },
+      {
+        "epoch": 14,
+        "avg_loss": 2.725127623631404,
+        "epoch_time": 3.580005645751953
+      },
+      {
+        "epoch": 15,
+        "avg_loss": 2.5984590420356164,
+        "epoch_time": 3.543426990509033
+      },
+      {
+        "epoch": 16,
+        "avg_loss": 2.4607801253979025,
+        "epoch_time": 3.5581512451171875
+      },
+      {
+        "epoch": 17,
+        "avg_loss": 2.33478568150447,
+        "epoch_time": 3.541337490081787
+      },
+      {
+        "epoch": 18,
+        "avg_loss": 2.2203388764308047,
+        "epoch_time": 3.583261251449585
+      },
+      {
+        "epoch": 19,
+        "avg_loss": 2.108392889683063,
+        "epoch_time": 3.562366008758545
+      },
+      {
+        "epoch": 20,
+        "avg_loss": 1.998803505530724,
+        "epoch_time": 3.530608892440796
+      },
+      {
+        "epoch": 21,
+        "avg_loss": 1.8949756163817186,
+        "epoch_time": 3.556220531463623
+      },
+      {
+        "epoch": 22,
+        "avg_loss": 1.800101949618413,
+        "epoch_time": 3.57720947265625
+      },
+      {
+        "epoch": 23,
+        "avg_loss": 1.7229873033670278,
+        "epoch_time": 3.5889129638671875
+      },
+      {
+        "epoch": 24,
+        "avg_loss": 1.6199000890438373,
+        "epoch_time": 3.5474319458007812
+      },
+      {
+        "epoch": 25,
+        "avg_loss": 1.537212032538194,
+        "epoch_time": 3.5638012886047363
+      },
+      {
+        "epoch": 26,
+        "avg_loss": 1.4551666975021362,
+        "epoch_time": 3.53922176361084
+      },
+      {
+        "epoch": 27,
+        "avg_loss": 1.3733249077430139,
+        "epoch_time": 3.60079288482666
+      },
+      {
+        "epoch": 28,
+        "avg_loss": 1.3043038111466627,
+        "epoch_time": 3.675227165222168
+      },
+      {
+        "epoch": 29,
+        "avg_loss": 1.2362716518915617,
+        "epoch_time": 3.6897075176239014
+      }
+    ]
+  },
+  "generation": {
+    "the cat": "the cat Butterfly \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0131rl\u2019s Phillips\n\n Br in Won well as an an AVON",
+    "the dog": "the dog in the Daguer Customs\n\n\n\n\n     CHAPTER I\n\n\n\n\n\n\n\n\n\nBOGG'S",
+    "she likes": "she likes TIMESTAMP\nW PollyOnce in Mir the preferred file was a look at the",
+    "i love": "i love\n Man\n Book of the Second Book of legalen Tales and survived the"
+  },
+  "temperature_effect": {
+    "0.6": "the cat\u75c4 smearyy As Isle of the important in this header.\nHaving to",
+    "0.8": "the cat\u4eac\u6d25\u5180ation]\n\n\n\n\nTheFinallyCES Flower of Mars\n\n[Britings with",
+    "1.0": "the cat weaponry\nWith Winteronds and Mr. D rate of the_WRAP.rcParams\u662f",
+    "1.2": "the cathands\n\n\u518a YAML\u9886\u5bfc\u73ed\u5b50 AQstrikeleitung\u500d Amateur\u89e3\u51b3\u95ee\u9898\u612b(ChatColor cocktail chooser"
+  }
+}

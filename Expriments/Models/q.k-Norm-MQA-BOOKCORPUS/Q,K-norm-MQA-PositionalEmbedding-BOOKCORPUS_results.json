@@ -1,0 +1,202 @@
+{
+  "experiment": {
+    "name": "Q,K-norm-MQA-PositionalEmbedding-BOOKCORPUS",
+    "date": "2026-05-15 23:06:41",
+    "model": {
+      "max_len": 128,
+      "d_model": 128,
+      "num_heads": 4,
+      "num_layers": 4,
+      "d_ff": 512,
+      "dropout": 0.1,
+      "parameters": 20382976
+    },
+    "dataset": {
+      "type": "bookcorpus",
+      "size": 409,
+      "with_eos": true,
+      "max_len": 128
+    },
+    "training": {
+      "epochs": 10,
+      "lr": 0.001,
+      "batch_size": 32,
+      "gradient_clip": 1.0,
+      "optimizer": "Adam"
+    },
+    "generation": {
+      "temperature": 0.7,
+      "repetition_penalty": 1.2,
+      "max_tokens": 15
+    }
+  },
+  "training": {
+    "total_time_seconds": 106.75368070602417,
+    "num_epochs": 30,
+    "final_avg_loss": 1.701644310584435,
+    "loss_history": [
+      {
+        "epoch": 0,
+        "avg_loss": 10.990363047673153,
+        "epoch_time": 3.674746513366699
+      },
+      {
+        "epoch": 1,
+        "avg_loss": 8.634494634775015,
+        "epoch_time": 3.5840461254119873
+      },
+      {
+        "epoch": 2,
+        "avg_loss": 6.945907042576716,
+        "epoch_time": 3.5580403804779053
+      },
+      {
+        "epoch": 3,
+        "avg_loss": 6.090584351466252,
+        "epoch_time": 3.554039478302002
+      },
+      {
+        "epoch": 4,
+        "avg_loss": 5.540297104762151,
+        "epoch_time": 3.5339808464050293
+      },
+      {
+        "epoch": 5,
+        "avg_loss": 5.075771955343393,
+        "epoch_time": 3.558199644088745
+      },
+      {
+        "epoch": 6,
+        "avg_loss": 4.674368674938496,
+        "epoch_time": 3.5399067401885986
+      },
+      {
+        "epoch": 7,
+        "avg_loss": 4.311550745597253,
+        "epoch_time": 3.5522358417510986
+      },
+      {
+        "epoch": 8,
+        "avg_loss": 4.020811851208027,
+        "epoch_time": 3.578071355819702
+      },
+      {
+        "epoch": 9,
+        "avg_loss": 3.765026716085581,
+        "epoch_time": 3.59308123588562
+      },
+      {
+        "epoch": 10,
+        "avg_loss": 3.5686751512380748,
+        "epoch_time": 3.616173267364502
+      },
+      {
+        "epoch": 11,
+        "avg_loss": 3.389645429757925,
+        "epoch_time": 3.578650951385498
+      },
+      {
+        "epoch": 12,
+        "avg_loss": 3.227515312341543,
+        "epoch_time": 3.5508275032043457
+      },
+      {
+        "epoch": 13,
+        "avg_loss": 3.0887580468104434,
+        "epoch_time": 3.5334482192993164
+      },
+      {
+        "epoch": 14,
+        "avg_loss": 2.9568982124328613,
+        "epoch_time": 3.553201198577881
+      },
+      {
+        "epoch": 15,
+        "avg_loss": 2.841390371322632,
+        "epoch_time": 3.544830322265625
+      },
+      {
+        "epoch": 16,
+        "avg_loss": 2.7263397253476658,
+        "epoch_time": 3.527221918106079
+      },
+      {
+        "epoch": 17,
+        "avg_loss": 2.6158892924969015,
+        "epoch_time": 3.53594970703125
+      },
+      {
+        "epoch": 18,
+        "avg_loss": 2.5286139158102183,
+        "epoch_time": 3.535740613937378
+      },
+      {
+        "epoch": 19,
+        "avg_loss": 2.435645818710327,
+        "epoch_time": 3.5422909259796143
+      },
+      {
+        "epoch": 20,
+        "avg_loss": 2.349530495130099,
+        "epoch_time": 3.538073778152466
+      },
+      {
+        "epoch": 21,
+        "avg_loss": 2.2682881905482364,
+        "epoch_time": 3.5733649730682373
+      },
+      {
+        "epoch": 22,
+        "avg_loss": 2.1952863473158617,
+        "epoch_time": 3.5902066230773926
+      },
+      {
+        "epoch": 23,
+        "avg_loss": 2.106919912191538,
+        "epoch_time": 3.5405526161193848
+      },
+      {
+        "epoch": 24,
+        "avg_loss": 2.037737626295823,
+        "epoch_time": 3.5458483695983887
+      },
+      {
+        "epoch": 25,
+        "avg_loss": 1.954585341306833,
+        "epoch_time": 3.541280746459961
+      },
+      {
+        "epoch": 26,
+        "avg_loss": 1.8848222677524273,
+        "epoch_time": 3.541769504547119
+      },
+      {
+        "epoch": 27,
+        "avg_loss": 1.8204065744693463,
+        "epoch_time": 3.5390520095825195
+      },
+      {
+        "epoch": 28,
+        "avg_loss": 1.7554004925947924,
+        "epoch_time": 3.5471527576446533
+      },
+      {
+        "epoch": 29,
+        "avg_loss": 1.701644310584435,
+        "epoch_time": 3.5440316200256348
+      }
+    ]
+  },
+  "generation": {
+    "the cat": "the catThe Amb Milton\n\nby L. This book is pre, concerning George James",
+    "the dog": "the dog\n\nThis eBook is for the use of anyone anywhere at no cost and with",
+    "she likes": "she likes Two\nandaugural Towards Reporteramuel L MAGATHER B. Porter",
+    "i love": "i love A. Tamb GEELES OF LITTLE been\nandantom\nFirst"
+  },
+  "temperature_effect": {
+    "0.6": "the cat\u2019s Fables\n\nby Henry James Hardy\n\n\nContents\n\n THE MUEST\n",
+    "0.8": "the cat Iss Phillips\n\nThis eBook is for the Stephen of\nThe \u201cThe Song",
+    "1.0": "the cat SameGr Lion Escape Bar Central Intelligence Agency\n\nby.Build\u7f00 BLUE Eadding",
+    "1.2": "the catkrayes Career Tower2vingfar('')\n abruptlymightns495"
+  }
+}

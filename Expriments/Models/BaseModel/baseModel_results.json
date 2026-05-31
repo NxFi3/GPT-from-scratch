@@ -1,0 +1,202 @@
+{
+  "experiment": {
+    "name": "baseModel",
+    "date": "2026-05-15 21:00:16",
+    "model": {
+      "max_len": 64,
+      "d_model": 128,
+      "num_heads": 4,
+      "num_layers": 4,
+      "d_ff": 512,
+      "dropout": 0.1,
+      "parameters":20473600
+    },
+    "dataset": {
+      "type": "custom_200_sentences",
+      "size": 200,
+      "with_eos": true,
+      "max_len": 64
+    },
+    "training": {
+      "epochs": 30,
+      "lr": 0.001,
+      "batch_size": 32,
+      "gradient_clip": 1.0,
+      "optimizer": "Adam"
+    },
+    "generation": {
+      "temperature": 0.7,
+      "repetition_penalty": 1.2,
+      "max_tokens": 15
+    }
+  },
+  "training": {
+    "total_time_seconds": 3.390263080596924,
+    "num_epochs": 30,
+    "final_avg_loss": 0.3026542620999472,
+    "loss_history": [
+      {
+        "epoch": 0,
+        "avg_loss": 0.2939501873084477,
+        "epoch_time": 0.12694311141967773
+      },
+      {
+        "epoch": 1,
+        "avg_loss": 0.30637769188199726,
+        "epoch_time": 0.1197357177734375
+      },
+      {
+        "epoch": 2,
+        "avg_loss": 0.3073595464229584,
+        "epoch_time": 0.1191244125366211
+      },
+      {
+        "epoch": 3,
+        "avg_loss": 0.286451803786414,
+        "epoch_time": 0.11941266059875488
+      },
+      {
+        "epoch": 4,
+        "avg_loss": 0.34440180233546663,
+        "epoch_time": 0.11644697189331055
+      },
+      {
+        "epoch": 5,
+        "avg_loss": 0.2896203654153006,
+        "epoch_time": 0.11434459686279297
+      },
+      {
+        "epoch": 6,
+        "avg_loss": 0.308917692729405,
+        "epoch_time": 0.10984683036804199
+      },
+      {
+        "epoch": 7,
+        "avg_loss": 0.29720114384378704,
+        "epoch_time": 0.11742997169494629
+      },
+      {
+        "epoch": 8,
+        "avg_loss": 0.3037438115903309,
+        "epoch_time": 0.10976123809814453
+      },
+      {
+        "epoch": 9,
+        "avg_loss": 0.29819699270384653,
+        "epoch_time": 0.11467432975769043
+      },
+      {
+        "epoch": 10,
+        "avg_loss": 0.3062834931271417,
+        "epoch_time": 0.11469435691833496
+      },
+      {
+        "epoch": 11,
+        "avg_loss": 0.3048453373568399,
+        "epoch_time": 0.11601972579956055
+      },
+      {
+        "epoch": 12,
+        "avg_loss": 0.30913879190172466,
+        "epoch_time": 0.11949968338012695
+      },
+      {
+        "epoch": 13,
+        "avg_loss": 0.3132099573101316,
+        "epoch_time": 0.11082148551940918
+      },
+      {
+        "epoch": 14,
+        "avg_loss": 0.3043286438499178,
+        "epoch_time": 0.10992646217346191
+      },
+      {
+        "epoch": 15,
+        "avg_loss": 0.30089543546949116,
+        "epoch_time": 0.10641884803771973
+      },
+      {
+        "epoch": 16,
+        "avg_loss": 0.29888193735054563,
+        "epoch_time": 0.10989069938659668
+      },
+      {
+        "epoch": 17,
+        "avg_loss": 0.30522451230457853,
+        "epoch_time": 0.11120152473449707
+      },
+      {
+        "epoch": 18,
+        "avg_loss": 0.3080011968101774,
+        "epoch_time": 0.1091463565826416
+      },
+      {
+        "epoch": 19,
+        "avg_loss": 0.3336372652224132,
+        "epoch_time": 0.11285781860351562
+      },
+      {
+        "epoch": 20,
+        "avg_loss": 0.30430248592581066,
+        "epoch_time": 0.10813212394714355
+      },
+      {
+        "epoch": 21,
+        "avg_loss": 0.31377239738191876,
+        "epoch_time": 0.10772180557250977
+      },
+      {
+        "epoch": 22,
+        "avg_loss": 0.29387218824454714,
+        "epoch_time": 0.10708951950073242
+      },
+      {
+        "epoch": 23,
+        "avg_loss": 0.3033189560685839,
+        "epoch_time": 0.1126859188079834
+      },
+      {
+        "epoch": 24,
+        "avg_loss": 0.297626256942749,
+        "epoch_time": 0.11245036125183105
+      },
+      {
+        "epoch": 25,
+        "avg_loss": 0.28571753203868866,
+        "epoch_time": 0.1074531078338623
+      },
+      {
+        "epoch": 26,
+        "avg_loss": 0.2771212745990072,
+        "epoch_time": 0.11106610298156738
+      },
+      {
+        "epoch": 27,
+        "avg_loss": 0.30083878551210674,
+        "epoch_time": 0.11313557624816895
+      },
+      {
+        "epoch": 28,
+        "avg_loss": 0.3209720253944397,
+        "epoch_time": 0.1096334457397461
+      },
+      {
+        "epoch": 29,
+        "avg_loss": 0.3026542620999472,
+        "epoch_time": 0.10960555076599121
+      }
+    ]
+  },
+  "generation": {
+    "the cat": "the cat sat on the mat",
+    "the dog": "the dog ran fast in the park",
+    "she likes": "she likes to read books at night",
+    "i love": "i love my cat very much"
+  },
+  "temperature_effect": {
+    "0.6": "the cat sat on the mat",
+    "0.8": "the cat sat on the mat",
+    "1.0": "the cat sat on the well",
+    "1.2": "the cat sat on the mat"
+  }
+}

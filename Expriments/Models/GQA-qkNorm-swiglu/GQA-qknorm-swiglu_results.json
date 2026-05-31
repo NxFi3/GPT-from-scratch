@@ -1,0 +1,203 @@
+{
+  "experiment": {
+    "name": "GQA-qknorm-swiglu",
+    "date": "2026-05-16 01:03:14",
+    "model": {
+      "max_len": 512,
+      "d_model": 256,
+      "num_heads": 8,
+      "num_layers": 4,
+      "d_ff": 512,
+      "num_groups": 4,
+      "dropout": 0.1,
+      "parameters": 41323264
+    },
+    "dataset": {
+      "type": "bookcorpus",
+      "size": 409,
+      "with_eos": true,
+      "max_len": 128
+    },
+    "training": {
+      "epochs": 10,
+      "lr": 0.001,
+      "batch_size": 32,
+      "gradient_clip": 1.0,
+      "optimizer": "Adam"
+    },
+    "generation": {
+      "temperature": 0.7,
+      "repetition_penalty": 1.2,
+      "max_tokens": 15
+    }
+  },
+  "training": {
+    "total_time_seconds": 143.64038753509521,
+    "num_epochs": 30,
+    "final_avg_loss": 0.63221347790498,
+    "loss_history": [
+      {
+        "epoch": 0,
+        "avg_loss": 10.065882462721605,
+        "epoch_time": 4.903299808502197
+      },
+      {
+        "epoch": 1,
+        "avg_loss": 6.650320713336651,
+        "epoch_time": 4.76745343208313
+      },
+      {
+        "epoch": 2,
+        "avg_loss": 5.411412385793833,
+        "epoch_time": 4.796941041946411
+      },
+      {
+        "epoch": 3,
+        "avg_loss": 4.723014831542969,
+        "epoch_time": 4.847844362258911
+      },
+      {
+        "epoch": 4,
+        "avg_loss": 4.260567481701191,
+        "epoch_time": 4.8015217781066895
+      },
+      {
+        "epoch": 5,
+        "avg_loss": 3.8713069145496073,
+        "epoch_time": 4.76269006729126
+      },
+      {
+        "epoch": 6,
+        "avg_loss": 3.5557749087993917,
+        "epoch_time": 4.760981321334839
+      },
+      {
+        "epoch": 7,
+        "avg_loss": 3.294122237425584,
+        "epoch_time": 4.75475287437439
+      },
+      {
+        "epoch": 8,
+        "avg_loss": 3.0593727185175967,
+        "epoch_time": 4.74554181098938
+      },
+      {
+        "epoch": 9,
+        "avg_loss": 2.8643133273491492,
+        "epoch_time": 4.802525281906128
+      },
+      {
+        "epoch": 10,
+        "avg_loss": 2.672246511165912,
+        "epoch_time": 4.790466785430908
+      },
+      {
+        "epoch": 11,
+        "avg_loss": 2.5092521080603967,
+        "epoch_time": 4.750137805938721
+      },
+      {
+        "epoch": 12,
+        "avg_loss": 2.34195430462177,
+        "epoch_time": 4.915791273117065
+      },
+      {
+        "epoch": 13,
+        "avg_loss": 2.2067342629799476,
+        "epoch_time": 4.7813684940338135
+      },
+      {
+        "epoch": 14,
+        "avg_loss": 2.0701309075722327,
+        "epoch_time": 4.779588937759399
+      },
+      {
+        "epoch": 15,
+        "avg_loss": 1.9442246968929584,
+        "epoch_time": 4.799166202545166
+      },
+      {
+        "epoch": 16,
+        "avg_loss": 1.8123157757979174,
+        "epoch_time": 4.914409637451172
+      },
+      {
+        "epoch": 17,
+        "avg_loss": 1.6921451458564172,
+        "epoch_time": 4.761271953582764
+      },
+      {
+        "epoch": 18,
+        "avg_loss": 1.5792550582152147,
+        "epoch_time": 4.7619874477386475
+      },
+      {
+        "epoch": 19,
+        "avg_loss": 1.467960155927218,
+        "epoch_time": 4.749305725097656
+      },
+      {
+        "epoch": 20,
+        "avg_loss": 1.3597384782937856,
+        "epoch_time": 4.75908899307251
+      },
+      {
+        "epoch": 21,
+        "avg_loss": 1.2555355933996348,
+        "epoch_time": 4.761205673217773
+      },
+      {
+        "epoch": 22,
+        "avg_loss": 1.16937151321998,
+        "epoch_time": 4.7766501903533936
+      },
+      {
+        "epoch": 23,
+        "avg_loss": 1.071702003479004,
+        "epoch_time": 4.795103311538696
+      },
+      {
+        "epoch": 24,
+        "avg_loss": 0.9886203362391546,
+        "epoch_time": 4.769918203353882
+      },
+      {
+        "epoch": 25,
+        "avg_loss": 0.9098562644078181,
+        "epoch_time": 4.767132997512817
+      },
+      {
+        "epoch": 26,
+        "avg_loss": 0.8352838387856116,
+        "epoch_time": 4.746822834014893
+      },
+      {
+        "epoch": 27,
+        "avg_loss": 0.7592981274311359,
+        "epoch_time": 4.770256519317627
+      },
+      {
+        "epoch": 28,
+        "avg_loss": 0.6926875939735999,
+        "epoch_time": 4.752324819564819
+      },
+      {
+        "epoch": 29,
+        "avg_loss": 0.63221347790498,
+        "epoch_time": 4.787700653076172
+      }
+    ]
+  },
+  "generation": {
+    "the cat": "the catative\nby Amy From the Northern Men\n\n\nContents\n\n I. This C",
+    "the dog": "the dog, by5 by Stau\n\n\nContents\n\n 95, edition,",
+    "she likes": "she likes))esyane Army\n\nbyTEaf\n\n\n\n\n Prefapped\nAll",
+    "i love": "i loveist Father\nThe OrQUEST\n\nby Sherwood Churchill\n\n\nContents:\n\n  "
+  },
+  "temperature_effect": {
+    "0.6": "the cat King\n\nby Henry James18, the Bible\n\n\nContents\n\n INTRODUCTION",
+    "0.8": "the catelpopus\n\nby Edgar Rice Burroughs\n\n\nContents\n\n 10",
+    "1.0": "the cat.Oise illustration\n\nby Charlotte Dobne\n\n\n the Department of Manyells\n\n\n",
+    "1.2": "the catology,Copyright EdwardANATE by Tang\u2019s AmericanIELD Address5 \u2018\n\n"
+  }
+}

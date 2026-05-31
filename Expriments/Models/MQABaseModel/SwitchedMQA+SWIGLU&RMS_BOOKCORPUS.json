@@ -1,0 +1,202 @@
+{
+  "experiment": {
+    "name": "SwitchedMQA+SWIGLU&RMS_BOOKCORPUS",
+    "date": "2026-05-15 22:19:58",
+    "model": {
+      "max_len": 128,
+      "d_model": 128,
+      "num_heads": 4,
+      "num_layers": 4,
+      "d_ff": 512,
+      "dropout": 0.1,
+      "parameters": 20382720
+    },
+    "dataset": {
+      "type": "bookcorpus",
+      "size": 409,
+      "with_eos": true,
+      "max_len": 128
+    },
+    "training": {
+      "epochs": 10,
+      "lr": 0.001,
+      "batch_size": 32,
+      "gradient_clip": 1.0,
+      "optimizer": "Adam"
+    },
+    "generation": {
+      "temperature": 0.7,
+      "repetition_penalty": 1.2,
+      "max_tokens": 15
+    }
+  },
+  "training": {
+    "total_time_seconds": 105.4023506641388,
+    "num_epochs": 30,
+    "final_avg_loss": 1.6238577549274151,
+    "loss_history": [
+      {
+        "epoch": 0,
+        "avg_loss": 10.954941676213192,
+        "epoch_time": 3.597684383392334
+      },
+      {
+        "epoch": 1,
+        "avg_loss": 8.545977115631104,
+        "epoch_time": 3.5098395347595215
+      },
+      {
+        "epoch": 2,
+        "avg_loss": 6.924004114591158,
+        "epoch_time": 3.5389225482940674
+      },
+      {
+        "epoch": 3,
+        "avg_loss": 6.141756057739258,
+        "epoch_time": 3.5567867755889893
+      },
+      {
+        "epoch": 4,
+        "avg_loss": 5.692411019251897,
+        "epoch_time": 3.5128302574157715
+      },
+      {
+        "epoch": 5,
+        "avg_loss": 5.245928544264573,
+        "epoch_time": 3.4920873641967773
+      },
+      {
+        "epoch": 6,
+        "avg_loss": 4.798259698427641,
+        "epoch_time": 3.5092082023620605
+      },
+      {
+        "epoch": 7,
+        "avg_loss": 4.382768741020789,
+        "epoch_time": 3.4914753437042236
+      },
+      {
+        "epoch": 8,
+        "avg_loss": 4.058963702275203,
+        "epoch_time": 3.4859797954559326
+      },
+      {
+        "epoch": 9,
+        "avg_loss": 3.8063394839947042,
+        "epoch_time": 3.5157716274261475
+      },
+      {
+        "epoch": 10,
+        "avg_loss": 3.596762125308697,
+        "epoch_time": 3.502504587173462
+      },
+      {
+        "epoch": 11,
+        "avg_loss": 3.4060434928307166,
+        "epoch_time": 3.5438406467437744
+      },
+      {
+        "epoch": 12,
+        "avg_loss": 3.2421396328852725,
+        "epoch_time": 3.485689640045166
+      },
+      {
+        "epoch": 13,
+        "avg_loss": 3.0976403676546536,
+        "epoch_time": 3.525744915008545
+      },
+      {
+        "epoch": 14,
+        "avg_loss": 2.9540640390836277,
+        "epoch_time": 3.4920384883880615
+      },
+      {
+        "epoch": 15,
+        "avg_loss": 2.8374713567587047,
+        "epoch_time": 3.5186636447906494
+      },
+      {
+        "epoch": 16,
+        "avg_loss": 2.722913301908053,
+        "epoch_time": 3.491640567779541
+      },
+      {
+        "epoch": 17,
+        "avg_loss": 2.605455838716947,
+        "epoch_time": 3.520906448364258
+      },
+      {
+        "epoch": 18,
+        "avg_loss": 2.5042894069965067,
+        "epoch_time": 3.494007110595703
+      },
+      {
+        "epoch": 19,
+        "avg_loss": 2.3996311884659987,
+        "epoch_time": 3.5148441791534424
+      },
+      {
+        "epoch": 20,
+        "avg_loss": 2.3220504430624156,
+        "epoch_time": 3.507909059524536
+      },
+      {
+        "epoch": 21,
+        "avg_loss": 2.2357545632582445,
+        "epoch_time": 3.4877452850341797
+      },
+      {
+        "epoch": 22,
+        "avg_loss": 2.148192974237295,
+        "epoch_time": 3.49993634223938
+      },
+      {
+        "epoch": 23,
+        "avg_loss": 2.0560241479140062,
+        "epoch_time": 3.511051893234253
+      },
+      {
+        "epoch": 24,
+        "avg_loss": 1.9763445854187012,
+        "epoch_time": 3.5059144496917725
+      },
+      {
+        "epoch": 25,
+        "avg_loss": 1.902789070056035,
+        "epoch_time": 3.5200350284576416
+      },
+      {
+        "epoch": 26,
+        "avg_loss": 1.834405385530912,
+        "epoch_time": 3.52388072013855
+      },
+      {
+        "epoch": 27,
+        "avg_loss": 1.7531655201545129,
+        "epoch_time": 3.4932918548583984
+      },
+      {
+        "epoch": 28,
+        "avg_loss": 1.6959933134225698,
+        "epoch_time": 3.4908831119537354
+      },
+      {
+        "epoch": 29,
+        "avg_loss": 1.6238577549274151,
+        "epoch_time": 3.5581605434417725
+      }
+    ]
+  },
+  "generation": {
+    "the cat": "the cat Phillips\n\nA If wave before\n\n\n185, and most or re",
+    "the dog": "the dogens)\n\nThis eBook is for the by Henryuel Civil War\n\nThis eBook",
+    "she likes": "she likes will Papers\n\nby J. Stark Continued (185]\n\nIn Ag",
+    "i love": "i love     \u201cESSBERT BLES Robert W. Service\n\nby H. "
+  },
+  "temperature_effect": {
+    "0.6": "the cat, and the United States. Nor listed to keep\nAll Life and most",
+    "0.8": "the cat, Jr.\n\n\n\n\n\n\n\n\n #3]\n\nCharacter set encoding: ASCII\n\nThis book",
+    "1.0": "the cat, Buddy\naTHE Ent WarhiyesCONTENTS\n\n  Capture of",
+    "1.2": "the cat,.Helpers\ud1a2llustration]\n\n\nAvailable THE MerryENCE.\n\n                                T"
+  }
+}

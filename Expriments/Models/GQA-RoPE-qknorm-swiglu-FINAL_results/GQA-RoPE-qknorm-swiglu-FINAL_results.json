@@ -1,0 +1,203 @@
+{
+  "experiment": {
+    "name": "GQA-RoPE-qknorm-swiglu-FINAL",
+    "date": "2026-05-16 12:33:56",
+    "model": {
+      "max_len": 512,
+      "d_model": 256,
+      "num_heads": 8,
+      "num_layers": 4,
+      "d_ff": 512,
+      "num_groups": 4,
+      "dropout": 0.1,
+      "parameters": 41192192
+    },
+    "dataset": {
+      "type": "bookcorpus",
+      "size": 409,
+      "with_eos": true,
+      "max_len": 128
+    },
+    "training": {
+      "epochs": 10,
+      "lr": 0.001,
+      "batch_size": 32,
+      "gradient_clip": 1.0,
+      "optimizer": "Adam"
+    },
+    "generation": {
+      "temperature": 0.7,
+      "repetition_penalty": 1.2,
+      "max_tokens": 15
+    }
+  },
+  "training": {
+    "total_time_seconds": 143.08340191841125,
+    "num_epochs": 30,
+    "final_avg_loss": 0.3532402446636787,
+    "loss_history": [
+      {
+        "epoch": 0,
+        "avg_loss": 10.11056606586163,
+        "epoch_time": 4.845794200897217
+      },
+      {
+        "epoch": 1,
+        "avg_loss": 6.601268474872295,
+        "epoch_time": 4.736121654510498
+      },
+      {
+        "epoch": 2,
+        "avg_loss": 5.300066691178542,
+        "epoch_time": 4.789100170135498
+      },
+      {
+        "epoch": 3,
+        "avg_loss": 4.60731289936946,
+        "epoch_time": 4.965237855911255
+      },
+      {
+        "epoch": 4,
+        "avg_loss": 4.091574962322529,
+        "epoch_time": 4.801424264907837
+      },
+      {
+        "epoch": 5,
+        "avg_loss": 3.6774275302886963,
+        "epoch_time": 4.77410364151001
+      },
+      {
+        "epoch": 6,
+        "avg_loss": 3.358049356020414,
+        "epoch_time": 4.76314115524292
+      },
+      {
+        "epoch": 7,
+        "avg_loss": 3.0884862496302676,
+        "epoch_time": 4.781886100769043
+      },
+      {
+        "epoch": 8,
+        "avg_loss": 2.8224612382742076,
+        "epoch_time": 4.7784693241119385
+      },
+      {
+        "epoch": 9,
+        "avg_loss": 2.5950647867642918,
+        "epoch_time": 4.759513854980469
+      },
+      {
+        "epoch": 10,
+        "avg_loss": 2.387236136656541,
+        "epoch_time": 4.767370223999023
+      },
+      {
+        "epoch": 11,
+        "avg_loss": 2.193897192294781,
+        "epoch_time": 4.754607915878296
+      },
+      {
+        "epoch": 12,
+        "avg_loss": 2.0165609304721537,
+        "epoch_time": 4.774077415466309
+      },
+      {
+        "epoch": 13,
+        "avg_loss": 1.8537928049380963,
+        "epoch_time": 4.781723260879517
+      },
+      {
+        "epoch": 14,
+        "avg_loss": 1.6983519609157856,
+        "epoch_time": 4.7853922843933105
+      },
+      {
+        "epoch": 15,
+        "avg_loss": 1.5593102895296538,
+        "epoch_time": 4.8778393268585205
+      },
+      {
+        "epoch": 16,
+        "avg_loss": 1.4206939202088575,
+        "epoch_time": 4.740638256072998
+      },
+      {
+        "epoch": 17,
+        "avg_loss": 1.2851833196786733,
+        "epoch_time": 4.710175275802612
+      },
+      {
+        "epoch": 18,
+        "avg_loss": 1.1708962825628428,
+        "epoch_time": 4.722517967224121
+      },
+      {
+        "epoch": 19,
+        "avg_loss": 1.0588892239790697,
+        "epoch_time": 4.733887195587158
+      },
+      {
+        "epoch": 20,
+        "avg_loss": 0.9529213584386386,
+        "epoch_time": 4.720215559005737
+      },
+      {
+        "epoch": 21,
+        "avg_loss": 0.8519938588142395,
+        "epoch_time": 4.742302656173706
+      },
+      {
+        "epoch": 22,
+        "avg_loss": 0.7710306231792157,
+        "epoch_time": 4.756078004837036
+      },
+      {
+        "epoch": 23,
+        "avg_loss": 0.6854780820699838,
+        "epoch_time": 4.727311849594116
+      },
+      {
+        "epoch": 24,
+        "avg_loss": 0.6058684862576998,
+        "epoch_time": 4.7589404582977295
+      },
+      {
+        "epoch": 25,
+        "avg_loss": 0.5453822360588954,
+        "epoch_time": 4.774449110031128
+      },
+      {
+        "epoch": 26,
+        "avg_loss": 0.48437572442568266,
+        "epoch_time": 4.725858688354492
+      },
+      {
+        "epoch": 27,
+        "avg_loss": 0.4287678599357605,
+        "epoch_time": 4.728474378585815
+      },
+      {
+        "epoch": 28,
+        "avg_loss": 0.3835359995181744,
+        "epoch_time": 4.747579097747803
+      },
+      {
+        "epoch": 29,
+        "avg_loss": 0.3532402446636787,
+        "epoch_time": 4.755606412887573
+      }
+    ]
+  },
+  "generation": {
+    "the cat": "the cat eBook is for the use of anyone anywhere at no cost and with\nno",
+    "the dog": "the dog eBook is for the use of anyone anywhere at no cost and with\nalmost",
+    "she likes": "she likesANHERTGE\n\nWITH A Romance\n\nNew York\n\n\n\n\nCONTENTS\n\n",
+    "i love": "i love existed Coletics Jefferson\n\n BibleproofOR, with eBook is for the use"
+  },
+  "temperature_effect": {
+    "0.6": "the cat eBook is for the use of anyone anywhere at no cost and with\n      ",
+    "0.8": "the cat eBook is for the use of anyone anywhere at no cost and with\n      ",
+    "1.0": "the cat eBook is for the use of anyone anywhere at no cost and with\nONE",
+    "1.2": "the cat DAY in the\u502b, #3 Andnotes havepo there were friends years"
+  }
+}
