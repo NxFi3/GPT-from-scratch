@@ -95,7 +95,8 @@ It includes:
 * Model initialization
 * Training loop execution via `Trainer.py`
 * Checkpointing and resuming training
-
+* Elastic Weight Consolidation (EWC) for basic continual learning experiments to reduce catastrophic forgetting
+  
 ### Optimization Details
 
 * Optimizer: AdamW
