@@ -4,6 +4,11 @@ A full implementation of a **decoder-only Transformer language model (GPT-style)
 
 This project implements a minimal but complete language modeling system including training, inference, and optimized generation with KV cache.
 
+
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.7-red)](https://pytorch.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.11-green)](https://python.org/)
+
 ---
 
 ## Overview
@@ -142,21 +147,13 @@ print(tokenizer.decode(output[0]))
 
 ---
 ## Sample Model Outputs (221M parameters)
-Example From Model Pretrained on ~500 600M tokens and instruction tuned with magpiePro 1M
 
-**prompt:** What is AI?
+**Prompt:** What is AI?
 
-**output:**
+**Output:**
+<|user|> what is AI <|assistant|> AI refers to a broad range of technologies that can perform tasks and make decisions. This includes machine learning, automation, and data analysis systems that learn from experience to improve their performance over time.<|endoftext|>
 
-<|user|> what is AI <|assistant|> AI refers to a broad range of technologies that can be used to perform tasks and make decisions in various fields, such as:
-
-1. **AI**: AI systems can analyze data from various sources, including social media, news articles, and customer support tools.
-2. **Machine Learning**: AI systems can learn from data to improve their performance, reduce errors, and enhance their performance.
-3. **Automation**: AI systems can automate repetitive tasks, such as making decisions, recognizing patterns, or predicting outcomes.
-4. **Data Analysis**: AI systems can analyze large datasets to identify patterns, trends, and correlations, enabling more accurate predictions and insights.
-5. ** ...
-
----
+...
 
 ## Experiments
 
@@ -166,6 +163,30 @@ The `Experiments/` folder contains:
 * Model variations
 * Experimental configurations
 * Observations during development
+
+---
+
+### Installation
+```bash
+pip install torch transformers datasets tokenizers
+```
+---
+
+### Future Improvements
+- Scale to 1B+ parameters
+- Expand context to 2048/4096 tokens
+- Add RLHF/DPO for better instruction following
+- Add FlashAttention support
+- Implement 4-bit quantization (QLoRA)
+---
+## Quick Start
+
+1. Install dependencies: `pip install torch transformers datasets tokenizers`
+2. Open [`TrainingExample.ipynb`](TrainingExample.ipynb)
+3. Run all cells to train and chat with the model
+
+> [!NOTE]
+> Training on a GPU with 8GB+ VRAM is recommended for the 221M model.
 
 ---
 
@@ -189,4 +210,3 @@ All components are implemented manually in PyTorch without using high-level trai
 ## License
 
 **MIT**
-
