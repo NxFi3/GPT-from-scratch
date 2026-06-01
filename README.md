@@ -151,7 +151,7 @@ print(tokenizer.decode(output[0]))
 **Prompt:** What is AI?
 
 **Output:**
-<|user|> what is AI <|assistant|> AI refers to a broad range of technologies that can perform tasks and make decisions. This includes machine learning, automation, and data analysis systems that learn from experience to improve their performance over time.<|endoftext|>
+AI refers to a broad range of technologies that can perform tasks and make decisions. This includes machine learning, automation, and data analysis systems that learn from experience to improve their performance over time.
 
 ...
 
