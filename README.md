@@ -141,6 +141,22 @@ print(tokenizer.decode(output[0]))
 ```
 
 ---
+## Sample Model Outputs (221M parameters)
+Example From Model Pretrained on ~500 600M tokens and instruction tuned with magpiePro 1M
+
+**prompt:** What is AI?
+
+**output:**
+
+<|user|> what is AI <|assistant|> AI refers to a broad range of technologies that can be used to perform tasks and make decisions in various fields, such as:
+
+1. **AI**: AI systems can analyze data from various sources, including social media, news articles, and customer support tools.
+2. **Machine Learning**: AI systems can learn from data to improve their performance, reduce errors, and enhance their performance.
+3. **Automation**: AI systems can automate repetitive tasks, such as making decisions, recognizing patterns, or predicting outcomes.
+4. **Data Analysis**: AI systems can analyze large datasets to identify patterns, trends, and correlations, enabling more accurate predictions and insights.
+5. ** ...
+
+---
 
 ## Experiments
 
