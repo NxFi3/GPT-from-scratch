@@ -71,8 +71,7 @@ Each Transformer block contains:
 ```text id="structure"
 Model/
 ├── model.py              # GPT main model
-├── TransformersBlock.py  # Transformer block implementation
-├── attention.py          # GQA attention + KV cache logic
+├── TransformersBlock.py  # Transformer block implementation + GQA attention + KV cache logic
 ├── utils.py              # RoPE, RMSNorm, SwiGLU
 
 Trainer.py               # Training loop implementation
