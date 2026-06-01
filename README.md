@@ -28,28 +28,30 @@ The goal of this project is to deeply understand modern LLM architecture by impl
 - Output projection → vocabulary logits
 - 
 ---
-##  Project Structure
-Tokenizer/
-Model/
-├── model.py
+## 📁 Project Structure
+```
+Model/                  # Core model implementation
+├── model.py           # Main GPT model
 ├── transformer_block.py
-├── attention.py
-├── utils.py
+├── attention.py       # GQA + TransformersBlock 
+├── utils.py           # RoPE + SwiGLU + RMSNorm 
 
-Experiments/
-├── Models
-Assets/
-Trainer.py
-TrainingExample.ipynb
+Experiments/           # experiments & logs
+Assets/                # Loss curves, LR schedule
+
+Trainer.py             # Training loop
+TrainingExample.ipynb  # End-to-end training + inference demo
+```
 ---
 
 ##  Training
 Training is implemented in:
 `TrainingExample.ipynb`
-Includes:
-- dataset preparation
-- training loop (PyTorch)
-- generation
+This NoteBook demonstrates:
+- Data preprocessing and tokenization
+- Model initialization
+- Full training loop using `trainer.py`
+- Example inference
 ---
 
 ##  Results
@@ -83,9 +85,8 @@ This project was built for:
 ##  Tech Stack
 - PyTorch
 - Python
-- NumPy
+
 ---
 ##  Notes
 This is an educational implementation, but follows modern LLM design patterns used in production-scale models.
-
 
