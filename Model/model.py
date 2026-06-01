@@ -63,36 +63,81 @@ class GPTModel(nn.Module):
         if isinstance(module, nn.Embedding):
             nn.init.normal_(module.weight, mean=0.0, std=0.02)
 
-    def generate_manual(self, input_ids, max_new_tokens=100, temperature=0.7, 
-                        do_sample=True, stop_token=None, attention_mask=None, **kwargs):
- 
-        with torch.no_grad():
-            generated = input_ids.clone()
-            cache = None
-            
-            for step in range(max_new_tokens):
+    @torch.no_grad()
+    def generate_manual(
+        self,
+        input_ids,
+        max_new_tokens=100,
+        temperature=0.7,
+        top_k=50,
+        top_p=0.9,
+        repetition_penalty=1.1,
+        do_sample=True,
+        stop_token=None,
+        attention_mask=None,
+    ):
+        self.eval()
 
-                input_tokens = generated[:, -1:] if step > 0 else generated
+        generated = input_ids.clone()
+        cache = None
 
-                
-                logits, cache = self.forward(
-                    input_ids=input_tokens,
-                    attention_mask=attention_mask,
-                    cache=cache,
-                    padding_mask=None
+        for step in range(max_new_tokens):
+            input_tokens = generated[:, -1:] if step > 0 else generated
+            logits, cache = self.forward(
+                input_ids=input_tokens,
+                attention_mask=attention_mask,
+                cache=cache,
+                padding_mask=None
+            )
+            logits = logits[:, -1, :]   # (B, vocab)
+            logits = logits[0]          # (vocab,)
+            logits = logits.clone()
+            # RP
+            if repetition_penalty != 1.0:
+                for t in set(generated[0].tolist()):
+                    if t < logits.size(0):
+                        if logits[t] > 0:
+                            logits[t] /= repetition_penalty
+                        else:
+                            logits[t] *= repetition_penalty
+
+            # temperature
+            logits = logits / temperature
+            # top-k
+
+            if top_k > 0:
+                values, _ = torch.topk(logits, top_k)
+                min_val = values[-1]
+                logits = torch.where(
+                    logits < min_val,
+                    torch.tensor(float("-inf"), device=logits.device),
+                    logits
                 )
-                
-                next_token_logits = logits[0, -1, :] / temperature
-                
-                if do_sample:
-                    probs = F.softmax(next_token_logits, dim=-1)
-                    next_token = torch.multinomial(probs, 1).unsqueeze(0)
-                else:
-                    next_token = next_token_logits.argmax(dim=-1, keepdim=True).unsqueeze(0)
-                
-                generated = torch.cat([generated, next_token], dim=1)
-                
-                if stop_token is not None and next_token.item() == stop_token:
-                    break
-        
+
+            # top-p
+            if top_p < 1.0:
+                sorted_logits, sorted_idx = torch.sort(logits, descending=True)
+                probs = F.softmax(sorted_logits, dim=-1)
+
+                cum_probs = torch.cumsum(probs, dim=-1)
+
+                cutoff = cum_probs > top_p
+                cutoff[1:] = cutoff[:-1].clone()
+                cutoff[0] = False
+
+                sorted_logits[cutoff] = float("-inf")
+
+                logits = torch.empty_like(logits).scatter(-1, sorted_idx, sorted_logits)
+
+            probs = F.softmax(logits, dim=-1)
+
+            if do_sample:
+                next_token = torch.multinomial(probs, 1).unsqueeze(0)
+            else:
+                next_token = torch.argmax(probs).unsqueeze(0).unsqueeze(0)
+
+            generated = torch.cat([generated, next_token], dim=1)
+            if stop_token is not None and next_token.item() == stop_token:
+                break
+
         return generated
