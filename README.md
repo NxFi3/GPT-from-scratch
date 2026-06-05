@@ -146,7 +146,7 @@ print(tokenizer.decode(output[0]))
 ```
 
 ---
-## Sample Model Outputs (anahi0-221M-instruct parameters)
+## Sample Model Outputs (anahi0-221M-instruct)
 
 **Prompt:** What is AI?
 
